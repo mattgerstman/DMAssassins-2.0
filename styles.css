@@ -1,27 +1,27 @@
 @font-face
 {
 font-family: AGReg;
-src: url('/fonts/AG%20Book%20Rounded/AGBookRouCFFReg.otf');
+src: url('fonts/AG%20Book%20Rounded/AGBookRouCFFReg.otf');
 }
 
 @font-face
 {
 font-family: AGMed;
-src: url('/fonts/AG%20Book%20Rounded/AGBookRouCFFMed.otf');
+src: url('fonts/AG%20Book%20Rounded/AGBookRouCFFMed.otf');
 }
 
 
 @font-face
 {
 font-family: pacifico;
-src: url('/fonts/Pacifico.ttf');
+src: url('fonts/Pacifico.ttf');
 }
 
 @font-face
 {
 font-family: AvenirLight;
 /*src: url('http://mattgerstman.com/fonts/AvenirLTStd-Light.ttf');*/
-src: url('/fonts/AvenirLTStd-Roman.ttf');
+src: url('fonts/AvenirLTStd-Roman.ttf');
 }
 
 
