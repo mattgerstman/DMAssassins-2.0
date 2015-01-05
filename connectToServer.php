@@ -16,7 +16,7 @@ function connect() //connects to the mysql server and opens the assassins databa
 	
 //select the assassins database
 
-	if (! @mysql_select_db("dmassassins") ) {
+	if (! @mysql_select_db("dmassassins2") ) {
     	echo( "<P>Unable to locate the applications database at this time.</P>" );
     exit();
   	}
