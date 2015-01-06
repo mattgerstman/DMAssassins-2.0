@@ -10,7 +10,7 @@
 session_start();
 
 $pw = md5($_GET['pw']);
-if (($_SESSION['username'] != "mgerstman") && $_SESSION['usertype']!=-1 && $_SESSION['usertype']!=1)
+if (($_SESSION['DM2-username'] != "mgerstman") && $_SESSION['DM2-usertype']!=-1 && $_SESSION['DM2-usertype']!=1)
 {
 	header("Location: index.php");
 }
@@ -40,7 +40,7 @@ while ($row = mysql_fetch_array($result))
 	$method = $row["method"];
 	$pin = $row['pin'];
 	$team = $row['team'];
-		
+
 	for ($i=-1; $i<12; $i++)
 	{
 		$selectVal[$i]='"' . $i. '"';
@@ -49,21 +49,21 @@ while ($row = mysql_fetch_array($result))
 			$selectVal[$i] = $i . ' selected';
 		}
 	}
-	
+
 	$j++;
-	
+
 ?>
 	<div id="entire<?php echo $pin; ?>">
 	<img src="editprofile.png" class="editPen" /><p class="item" id="<?php echo $pin; ?>"><span id="<?php echo $pin; ?>Span"><?php echo $method; ?></span></p>
 	<input type="text" id="tweet<?php echo $pin; ?>" class="profileEdit" tweet="<?php echo $pin; ?>" value="<?php echo $method;?>" style="width:500px"/>
 	<img src="delete.png" class="deleteButton" tweet="<?php echo $pin; ?>" id="delete<?php echo $pin;?>" /><br /><br /></div>
-<?php	
-	
+<?php
+
 /*	 <form action="processEditTweet.php" method="post">
 		<input type="hidden" name="pin" value ='.$pin.' />
 		<input type="hidden" name="pw" value ="5f4dcc3b5aa765d61d8327deb882cf99"/>
 		<input type="input" name="way" value ="'.$method.'"/>
-	&nbsp;Delete:<input type="checkbox" name="delete" value="1" /> 
+	&nbsp;Delete:<input type="checkbox" name="delete" value="1" />
 	<input type="submit" value="Submit" /></form>');*/
 
 }
@@ -91,19 +91,19 @@ $('.item').live('mouseenter',
 $('.item').live('mouseleave',
 	function(){
 		$(this).prev('.editPen').css("display","none");
-		$(this).css('margin-left', '17px');		
+		$(this).css('margin-left', '17px');
 	});
 
 $('.item').click(
 	function(){
-		
+
 		var myId = $(this).attr('id');;
 		var spanType = $('#'+myId+'Span').is();
 		var value = $('#tweet'+myId).text();
-				
+
 		$('#tweet'+myId).css("display", "inline").focus();
 		$('#'+myId+'Span').css("display", "none");
-	
+
 	})
 
 
@@ -113,8 +113,8 @@ $('.profileEdit').keypress(function (e) {
     $(this).blur();
   }
 });
-	
-	
+
+
 $('.profileEdit').blur(function(){
 	console.log($(this));
 	var value = $(this).val();
@@ -127,9 +127,9 @@ $('.profileEdit').blur(function(){
 		"value" : value,
 		"column" : "tweets"
 	}
-	
+
 	$.post('editTweet.php', data, function(output) {  });
-	
+
 })
 
 </script>

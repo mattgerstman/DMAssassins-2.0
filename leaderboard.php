@@ -17,7 +17,7 @@ include("getTeam.php");
 
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <link href="tablesorter/themes/blue/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script> 
+<script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
 <meta name = "viewport" content = "width = device-width">
 <title>Leaderboard</title>
 </head>
@@ -26,36 +26,36 @@ include("getTeam.php");
 
 <div class="container">
 <?php
-	$username = $_SESSION['username'];
+	$username = $_SESSION['DM2-username'];
 	$table = "users";
 
 printDashboard(3);
 
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 
 echo('<h1>Leaderboard</h1>');
 
-$result = mysql_query("SELECT * FROM $table WHERE pin > 100 ORDER BY killed DESC, alive desc LIMIT 5");	
+$result = mysql_query("SELECT * FROM $table WHERE pin > 100 ORDER BY killed DESC, alive desc LIMIT 5");
 
 	echo('<h2>Top 5 Players Overall</h2>');
 	echo('<table id="top5" class="tablesorter">
 	<thead><tr>
 	<th>Name</th>
 	<th>Team</th>
-	<th>Alive</th>	
+	<th>Alive</th>
 	<th>Kills</th></tr></thead><tbody>');
-	
+
 while ($row = mysql_fetch_array($result))
 	{//loop through users
 
-//get user info	
+//get user info
 		$name = $row["name"];
 		$kills = $row["killed"];
 		$team = $row["team"];
-		$alive = $row["alive"];		
+		$alive = $row["alive"];
 		$outputTeam = getTeam($team);
-		
+
 		if ($alive)
 			$aliveText = "Yes";
 		else
@@ -63,22 +63,22 @@ while ($row = mysql_fetch_array($result))
 
 //print user info
 		echo('<tr><td>'.$name);
-		echo('</td><td>'.$outputTeam);		
-		echo('</td><td>'.$aliveText);		
-		echo('</td><td>'.$kills.'</td></tr>');		
-		
+		echo('</td><td>'.$outputTeam);
+		echo('</td><td>'.$aliveText);
+		echo('</td><td>'.$kills.'</td></tr>');
+
 	}
-	
+
 	echo('</tbody></table>');
 
-			
+
 	$result = mysql_query("SELECT team, SUM(alive), SUM(killed), COUNT(name) FROM $table WHERE pin >100 GROUP BY team ");
 	echo('<h2>Team Stats</h2>');
 	echo('<table id="teamStats" class="tablesorter">
 	<thead>
 	<tr>
 	<th>Team</th>
-	<th>Players</th>	
+	<th>Players</th>
 	<th>Alive</th>
 	<th>% Alive</th>
 	<th>Kills</th>
@@ -105,27 +105,27 @@ while ($row = mysql_fetch_array($result))
 
 //print user info
 		echo('<tr><td>'.$outputTeam);
-		echo('</td><td>'.$players);		
+		echo('</td><td>'.$players);
 		echo('</td><td>'.$alive);
 		echo('</td><td>'.round($percentAlive,1).'%');
 		echo('</td><td>'.$kills);
-		echo('</td><td>'.round($killsPerPlayer,3).'</td></tr>');		
+		echo('</td><td>'.round($killsPerPlayer,3).'</td></tr>');
 	}
 	$percentAlive = $totalAlive/$totalPlayers * 100;
 	if ($dead)
 		$killsPerPlayer=$dead/$totalPlayers;
 	else
 		$killsPerPlayer=0;
-	
+
 	echo('</tbody>');
-	
+
 	echo('</tr><tr><td> Total');
-	echo('</td><td>'.$totalPlayers);		
+	echo('</td><td>'.$totalPlayers);
 	echo('</td><td>'.$totalAlive);
 	echo('</td><td>'.round($percentAlive,1).'%');
-	echo('</td><td>'.$dead);		
+	echo('</td><td>'.$dead);
 	echo('</td><td>'.round($killsPerPlayer,3));
-	
+
 	echo('</td></tr></table>');
 
 //get list of all user's who are alive
@@ -141,7 +141,7 @@ while ($row = mysql_fetch_array($result))
 	while ($row = mysql_fetch_array($result))
 	{//loop through users
 
-//get user info	
+//get user info
 		$name = $row["name"];
 		$kills = $row["killed"];
 		$team = $row["team"];
@@ -149,13 +149,13 @@ while ($row = mysql_fetch_array($result))
 
 //print user info
 		echo('<tr><td>'.$name);
-		echo('</td><td>'.$outputTeam);		
-		echo('</td><td>'.$kills);	
+		echo('</td><td>'.$outputTeam);
+		echo('</td><td>'.$kills);
 	}
 		echo('</td></tr></tbody></table>');
-	
-	
-	
+
+
+
 
 ?>
 
@@ -176,28 +176,28 @@ while ($row = mysql_fetch_array($result))
 </div>
 
 <script type="text/javascript">
-$(document).ready(function() 
-    { 
+$(document).ready(function()
+    {
         $("#top5").tablesorter({
-	        
+
    	        sortList: [[3,1]]
-	        
-        }); 
-        
+
+        });
+
         $("#teamStats").tablesorter({
-	        
+
    	        sortList: [[2,1]]
-	        
-        }); 
-        
+
+        });
+
         $("#playersStanding").tablesorter({
-	        
+
    	        sortList: [[0,0]]
-	        
-        }); 
-    } 
-); 
-    
+
+        });
+    }
+);
+
 </script>
 
 </body>

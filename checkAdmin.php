@@ -6,11 +6,11 @@ function checkAdmin()
 {
 	//check if logged in
 	check();
-	
+
 	//then check if admin
-	if($_SESSION['usertype'])
+	if($_SESSION['DM2-usertype'])
 	{
-		
+
 	}
 	else
 	{

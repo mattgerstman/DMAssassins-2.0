@@ -36,7 +36,7 @@ include("dashboard.php");
 printDashboard(2);
 
 	$username = $_GET['username'];
-	$_SESSION['workingUser'] = $username;
+	$_SESSION['DM2-workingUser'] = $username;
 	$table = "users";
 
 
@@ -45,7 +45,7 @@ printDashboard(2);
 
 include_once("connectToServer.php");
 connect();
-	
+
 //get personal info
 	$result = mysql_query("SELECT * FROM $table where username = '$username'");
 	$pin = mysql_result($result,0,"pin");
@@ -54,12 +54,12 @@ connect();
 	$twitter = mysql_result($result,0,"twitter");
 	$email = mysql_result($result,0,"email");
 	$team = mysql_result($result,0,"team");
-	$kills = mysql_result($result,0,"killed");	
-	$img = mysql_result($result,0,"img");	
+	$kills = mysql_result($result,0,"killed");
+	$img = mysql_result($result,0,"img");
 	$outputTeam = getTeam($team);
-	
-	
-//output personal info	
+
+
+//output personal info
 
 
 ?>
@@ -98,13 +98,13 @@ Kills: <?php echo $kills; ?> </p>
 <div id="dropbox">
 			<span class="message"><img class="overall_img" src="<?php if ($img) {echo "uploads/".$img;} else {echo "drophere.png";} ?>" /></i></span>
 		</div>
-        
+
         <!-- Including The jQuery Library -->
 		<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-		
+
 		<!-- Including the HTML5 Uploader plugin -->
 		<script src="assets/js/jquery.filedrop.js"></script>
-		
+
 		<!-- The main script file -->
         <script src="assets/js/script.js"></script>
 
@@ -132,30 +132,30 @@ $('.item').live('mouseenter',
 $('.item').live('mouseleave',
 	function(){
 		$(this).prev('.editPen').css("display","none");
-		$(this).css('margin-left', '17px');		
+		$(this).css('margin-left', '17px');
 	});
 
 $('.item').click(
 	function(){
-		
+
 		var myId = $(this).attr('id');;
 		var spanType = $('#'+myId+'Span').is();
 		var value = $('#'+myId+'Span').text();
-				
+
 		$('#'+myId+'Input').css("display", "inline").focus();
 		$('#'+myId+'Span').css("display", "none");
-	
+
 	})
-	
+
 $('.profileEdit').keypress(function (e) {
   if (e.which == 13) {
     $(this).blur();
   }
 });
-	
-	
+
+
 $('#teamInput').val(<?php echo $team; ?>);
-	
+
 $('.profileEdit').blur(function(){
 	console.log($(this));
 	var value = $(this).val();
@@ -166,15 +166,15 @@ $('.profileEdit').blur(function(){
 		$("#"+category+"Span").text(value).css("display", "inline");
 	else
 		$("#"+category+"Span").text(text).css("display", "inline");
-		
+
 	var data = {
 		"pin" : <?php echo $pin; ?>,
 		"column" : category,
-		"value" : value,				
+		"value" : value,
 	}
-	
+
 	$.post('editField.php', data, function(output) {  });
-	
+
 })
 
 
@@ -182,8 +182,8 @@ $('.profileEdit').blur(function(){
 
 <?php
 
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 ?>
 
 

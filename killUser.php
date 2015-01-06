@@ -30,9 +30,9 @@ $email = mysql_result($result,0,"email");
 
 	$subject = 'You Have A New Target';
 	$message = "Hello $name,
-	
+
 	Your overall has manually killed your target. You may view your new target information on your account at http://assassins.dmcaptains.com
-	
+
 FTK!
 The Assassins Staff";
 	$headers = 'From: assassins@floridadm.org' . "\r\n" .'X-Mailer: PHP/' . phpversion();

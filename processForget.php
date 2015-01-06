@@ -1,5 +1,5 @@
 <?php
-	
+
 require('connectToServer.php');
 connect();
 
@@ -12,10 +12,10 @@ $result = mysql_query("SELECT * FROM $table WHERE email='$email'");
 
 
 if(mysql_num_rows($result))
-{//if email is in system send them an email with a reset link		
-		$name = mysql_result($result, 0,"name");				
-		$password = mysql_result($result,0,"password");				
-		
+{//if email is in system send them an email with a reset link
+		$name = mysql_result($result, 0,"name");
+		$password = mysql_result($result,0,"password");
+
 		$subject = 'Password Reset';
 		$message = "Hello $name,
 
@@ -28,14 +28,14 @@ The Assassins Staff";
 		    'X-Mailer: PHP/' . phpversion();
 
 		mail($email, $subject, $message, $headers);
-	
-	
+
+
 }
 else
 {// if email is not in system redirect and give an error
 
- $_SESSION['status']="<p><strong>Error:</strong> No account registered to this email.</p>";
- 
+ $_SESSION['DM2-status']="<p><strong>Error:</strong> No account registered to this email.</p>";
+
 }
 //redirect when done
  echo('<script language="javascript">redirURL = "login.php";self.location.href = redirURL;</script>');

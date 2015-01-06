@@ -7,10 +7,10 @@
 <body>
 <div class="container">
 <?php
-	
+
 session_start();
 $pw = md5($_GET['pw']);
-if ($_SESSION['usertype']!=1)
+if ($_SESSION['DM2-usertype']!=1)
 {
 	header("Location: index.php");
 }
@@ -30,11 +30,11 @@ if (mysql_num_rows($result)==0)
 
 while ($row = mysql_fetch_array($result))
 {
-	
+
 	$method = $row["method"];
 	$pin = $row["pin"];
 
-	
+
 ?>
 <div id="entire<?php echo $pin; ?>">
 <img src="editprofile.png" class="editPen" /><p class="item" id="<?php echo $pin; ?>"><span id="<?php echo $pin; ?>Span"><?php echo $method; ?></span></p>
@@ -43,10 +43,10 @@ while ($row = mysql_fetch_array($result))
 	<img src="delete.png" class="deleteButton" tweet="<?php echo $pin; ?>" id="delete<?php echo $pin;?>" /><br /><br /></div>
 
 
-<?php	
+<?php
 }
 
-echo($_SESSION['approve']);
+echo($_SESSION['DM2-approve']);
 
 ?>
 
@@ -80,19 +80,19 @@ $('.item').live('mouseenter',
 $('.item').live('mouseleave',
 	function(){
 		$(this).prev('.editPen').css("display","none");
-		$(this).css('margin-left', '17px');		
+		$(this).css('margin-left', '17px');
 	});
 
 $('.item').click(
 	function(){
-		
+
 		var myId = $(this).attr('id');;
 		var spanType = $('#'+myId+'Span').is();
 		var value = $('#tweet'+myId).text();
-				
+
 		$('#tweet'+myId).css("display", "inline").focus();
 		$('#'+myId+'Span').css("display", "none");
-	
+
 	})
 
 
@@ -102,8 +102,8 @@ $('.profileEdit').keypress(function (e) {
     $(this).blur();
   }
 });
-	
-	
+
+
 $('.profileEdit').blur(function(){
 	console.log($(this));
 	var value = $(this).val();
@@ -116,16 +116,16 @@ $('.profileEdit').blur(function(){
 		"value" : value,
 		"column" : "tweetTest"
 	}
-	
+
 	$.post('editTweet.php', data, function(output) {  });
-	
+
 })
 
 </script>
 
 <?php
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 ?>
 </div>
 <div class="footer">

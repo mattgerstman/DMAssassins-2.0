@@ -1,9 +1,9 @@
 <?php
-	
+
 session_start();
 function ae_detect_ie()
 {
-    if (isset($_SERVER['HTTP_USER_AGENT']) && 
+    if (isset($_SERVER['HTTP_USER_AGENT']) &&
     (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false))
         return true;
     else
@@ -44,9 +44,9 @@ We apologize but Internet Explorer is not supported on this application. You sho
 
 <?php
 }
-echo($_SESSION['status']);
-unset($_SESSION['status']);
-?> 
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
+?>
 
 
 <div class="footer">

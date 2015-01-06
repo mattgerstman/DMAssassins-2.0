@@ -57,8 +57,8 @@ Sign Up
 
 <?php
 
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 ?>
 
 </div>

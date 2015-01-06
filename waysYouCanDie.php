@@ -28,8 +28,8 @@ form .counter{
 	font-weight:bold;
 	color:#ccc;
 	}
-form .warning{color:#600;}	
-form .exceeded{color:#e00;}	
+form .warning{color:#600;}
+form .exceeded{color:#e00;}
 
 </style>
 
@@ -45,10 +45,10 @@ form .exceeded{color:#e00;}
 </head>
 <body>
 <div class="container" align="center">
-<?php 
-	if  ($_SESSION['usertype'])
+<?php
+	if  ($_SESSION['DM2-usertype'])
 		printTwitterDashboard(2);
-	else if ($_SESSION['username'])
+	else if ($_SESSION['DM2-username'])
 		printDashboard(5);
 ?>
 <h1>Twitter Submissions</h1>
@@ -70,7 +70,7 @@ Also here's some other things to keep in mind:<br />
 
     	<div align="center">
             <textarea id="way" name="way" ></textarea>
-        </div>	
+        </div>
 
 
 <br /><input type="submit" value="Submit" />
@@ -78,18 +78,18 @@ Also here's some other things to keep in mind:<br />
 <br />
 <script type="text/javascript">
 
-	$(document).ready(function(){	
+	$(document).ready(function(){
 		$("#way").charCount({
-			allowed: 130,		
+			allowed: 130,
 			warning: 20,
-			counterText: 'Characters left: '	
+			counterText: 'Characters left: '
 		});
 	});
 </script>
 <?php
 
-echo($_SESSION['nope']);
-unset($_SESSION['nope']);
+echo($_SESSION['DM2-nope']);
+unset($_SESSION['DM2-nope']);
 
 ?>
 

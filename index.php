@@ -27,9 +27,9 @@ include('Mobile_Detect.php');
 <?php
 printDashboard(0);
 //get user info from cookies
-	$username = $_SESSION['username'];
+	$username = $_SESSION['DM2-username'];
 	$table = "users";
-		
+
 //display dashboard links
 
 
@@ -38,10 +38,10 @@ printDashboard(0);
 include_once("connectToServer.php");
 connect();
 
-//get user's target	
+//get user's target
 
-	$result = mysql_query("SELECT * FROM $table where username =$username");	
-	$alive = mysql_result($result,0, "alive");	
+	$result = mysql_query("SELECT * FROM $table where username =$username");
+	$alive = mysql_result($result,0, "alive");
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
 	$showButton = mysql_result($result,0, "showbutton");
@@ -56,7 +56,7 @@ connect();
 	{
 		$targetTarget = 0;
 	}
-	
+
 	if (($target) && ($targetTarget != $myPin))
 	{
 
@@ -66,7 +66,7 @@ connect();
 	<p style="margin:0 5px"><b>New Rule:</b> Any participants or staff at any public performances, elections, competitions, and pageants are completely off limits. Not only are they considered safe zones, but you will be <b>completely removed</b> from the game should you violate this rule. This includes but is not limited to: the upcoming speech and debate tournament, soulfest, the homecoming pageant, and gator growl.<br /><b>This rule is all encompassing and the usual allowances for immediately before/after the event do not apply. No ambushing.</b></p>
 <?php
 		//get's target info from server
-		
+
 		$result = mysql_query("SELECT * FROM $table where pin = $target");
 
 		$targetName = mysql_result($result,0,"name");
@@ -93,7 +93,7 @@ connect();
 			$overallEmail = "sanchezj@floridadm.org";
 
 
-		$detect = new Mobile_Detect();		
+		$detect = new Mobile_Detect();
 		if (($showButton) && ! ($detect->isMobile()))
 		{
 			echo('<div style="margin:10px 0 -15px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
@@ -104,7 +104,7 @@ connect();
 			echo('<br /><img src ="uploads/'.$img.'" class="overall_img" />');
 		else
 			echo('<br />Your target has not uploaded a picture yet.');
-		
+
 
 		echo('</div><p>
 		If you have killed your target<br />
@@ -112,11 +112,11 @@ connect();
 		<form action="killTarget.php" method="post">
 		<input type="text" name="targetPin" /><br />
 		<input type="submit" value="Kill Target" /></form><br /><br />');
-		
-		
+
+
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
 
-		
+
 		echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($targetTarget == $myPin)
@@ -139,27 +139,27 @@ connect();
 <?php
 echo('<br/>');
 echo('<br/>');
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 ?>
 
 <script type="text/javascript">
 
 $('#bigbutton').click(function(){
-	
+
 	var data = {
 		'pin' : <?php echo $myPin; ?>
 	}
-	
+
 	$.post('bigButton.php', data, function(output) {
-	
+
 		if (output != 0)
 		{
 			data = {
 				'pin' : output
 				}
 			$.post('getUser.php', data, function(newUser){
-		
+
 				$('#info').fadeOut(0);
 				console.log(newUser);
 				newUser = $.parseJSON(newUser);
@@ -172,7 +172,7 @@ $('#bigbutton').click(function(){
 				$('#info').fadeIn(1000);
 			});
 		}
-	});	
+	});
 	$(this).fadeOut(1000);
 });
 

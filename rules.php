@@ -23,8 +23,8 @@ include("dashboard.php");
 
 
 //get user info from cookies
-	$username = $_SESSION['username'];
-		
+	$username = $_SESSION['DM2-username'];
+
 if ($username)
 {
 	printDashboard(4);
@@ -110,8 +110,8 @@ $(document).ready(function() {
 <?php
 echo('<br/>');
 echo('<br/>');
-echo($_SESSION['status']);
-unset($_SESSION['status']);
+echo($_SESSION['DM2-status']);
+unset($_SESSION['DM2-status']);
 ?>
 </div>
 <div class="footer">
