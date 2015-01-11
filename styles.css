@@ -26,7 +26,7 @@ src: url('fonts/AvenirLTStd-Roman.ttf');
 
 
 body {
-	background: url('http://floridadm.org/view.image?id=1101') repeat-x #014083;
+	background: url('/assets/img/orange.jpeg') repeat-x #014083;
 	font-family: AGReg;
 }
 
@@ -37,7 +37,7 @@ body {
 	width: 960px;
 	background-color:#FFFFFF;
 	overflow: hidden;
-	text-align: center;	
+	text-align: center;
 }
 
 
@@ -74,7 +74,7 @@ body {
 }
 .killUser:hover {
 	cursor:pointer;
-	color:#f16c27;	
+	color:#f16c27;
 }
 .reviveUser:hover {
 	cursor:pointer;
@@ -107,7 +107,7 @@ h3 {
 	height:35px;
 
 	padding-top:5px;
-	background: url('http://floridadm.org/view.image?id=1102');
+	background: url('/assets/img/blue.png');
 }
 
 a {
@@ -194,7 +194,7 @@ p {
 	margin: 0px;
 	color: #f16c27;
 	text-decoration: none;
-	
+
 }
 
 .follow_pics_table p {
@@ -223,29 +223,29 @@ p {
 
 .follow_pics_table {
 	text-align: right;
-	padding: 0 25px 15px 0;	
+	padding: 0 25px 15px 0;
 }
 
-.follow_pics_table a{	
+.follow_pics_table a{
 	text-decoration: none;
 	border: none;
 }
 
-.follow_pics_table a:hover {	
+.follow_pics_table a:hover {
 	text-decoration: none;
 	border: none;
 }
 
-.follow_pics_table a:visited {	
+.follow_pics_table a:visited {
 	text-decoration: none;
 	border: none;
 }
 
 .dashboard {
 	margin:0 auto;
-	
+
 	text-align: center;
-	
+
 	font-family:AGMed;
 	font-size:2em;
 	height:39px;
@@ -277,7 +277,7 @@ p {
 .nav {
 	background: #f16c27;
 	width: 1000px;
-	
+
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -337,11 +337,11 @@ p {
 }
 
 .sub_nav ul {
-    margin: 5px 0 0 0; 
+    margin: 5px 0 0 0;
 	padding: 0;
     float: left;
 }
- 
+
 .sub_nav ul li {
     display: inline;
 	margin: 0px 0px 0px 25px;
@@ -351,7 +351,7 @@ p {
 	color: #ffffff;
 	font-weight: bold;
 	font-size: 1.2em;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .sub_highlighted a {
@@ -376,11 +376,11 @@ p {
 }
 
 .events_nav ul {
-    margin: 5px 0 0 0; 
+    margin: 5px 0 0 0;
 	padding: 0;
     float: left;
 }
- 
+
 .events_nav ul li {
     display: inline;
 	margin: 0px 0px 0px 25px;
@@ -510,7 +510,7 @@ p {
 	border-width:3px;
 	border-style:solid;
 	text-align:center;
-	
+
 }
 
 .overall_list h1 a:hover {
@@ -573,7 +573,7 @@ p {
 #dropbox img {
 	width:303px;
 	margin-bottom:20px;
-	
+
 	border:5px solid;
 	border-radius:10px;
 }
@@ -581,7 +581,7 @@ p {
 .overall_img {
 	width:303px;
 	margin-bottom:20px;
-	
+
 	border:5px solid;
 	border-radius:10px;
 }
@@ -647,7 +647,7 @@ p {
 }
 
 .events h2 {
-	vertical-align:top;	
+	vertical-align:top;
 	text-align:center;
 	font-size:2.083em;
 	font-family:AGMed;
@@ -680,7 +680,7 @@ p {
 
 
 .events_right {
-	vertical-align:top;	
+	vertical-align:top;
 
 }
 
@@ -698,7 +698,7 @@ p {
 	border-radius: 10px;
 	border-width:3px;
 	border-style:solid;
-	
+
 }
 
 .miracle_list h2 {
@@ -773,7 +773,7 @@ p {
 
 .first_page .outside_table tr td table {
 	width:440px;
-	
+
 }
 
 .internal_table {
@@ -791,16 +791,16 @@ p {
 	border:none;
 }
 
-	
+
 .LV_invalid {
     color:#CC0000;
 }
-    
-    
-.LV_invalid_field, 
-input.LV_invalid_field:hover, 
+
+
+.LV_invalid_field,
+input.LV_invalid_field:hover,
 input.LV_invalid_field:active,
-textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:hover,
 textarea.LV_invalid_field:active {
     border: 1px solid #CC0000;
 }
@@ -847,26 +847,26 @@ textarea.LV_invalid_field:active {
 	display: inline-block;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	
+
 	-moz-border-radius: 70px;
 	-webkit-border-radius: 70px;
 	border-radius: 70px;
-	
+
 	-moz-box-shadow: inset rgba(255,255,255,.8) 0 2px 4px;
 	-webkit-box-shadow: inset rgba(255,255,255,.8) 0 2px 4px;
 	box-shadow: inset rgba(255,255,255,.8) 0 2px 4px;
-	
+
 	background: -moz-linear-gradient(top, rgba(180,9,9,1) 0%, rgba(111,9,9,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(180,9,9,1)), color-stop(100%,rgba(111,9,9,1)));
 	background: -webkit-linear-gradient(top, rgba(180,9,9,1) 0%,rgba(111,9,9,1) 100%);
 	background: -o-linear-gradient(top, rgba(180,9,9,1) 0%,rgba(111,9,9,1) 100%);
 	background: linear-gradient(top, rgba(180,9,9,1) 0%,rgba(111,9,9,1) 100%);
-	
+
 	-moz-background-clip: padding-box;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
-	
-	-webkit-transform: rotate(-12deg);	
+
+	-webkit-transform: rotate(-12deg);
 	-moz-transform: rotate(-12deg);
 	-ms-transform: rotate(-12deg);
 	-o-transform: rotate(-12deg);
@@ -887,19 +887,19 @@ textarea.LV_invalid_field:active {
 	}
 
 .round:active {
-	
+
 	-moz-box-shadow: rgba(255,255,255,1) 0 0 20px, rgba(255,255,255,1) 0 0 30px , inset rgba(0,0,0,.5) 0 4px 4px;
 	-webkit-box-shadow: rgba(255,255,255,1) 0 0 20px, rgba(255,255,255,1) 0 0 30px , inset rgba(0,0,0,.5) 0 4px 4px;
 	box-shadow: rgba(255,255,255,1) 0 0 20px, rgba(255,255,255,1) 0 0 30px , inset rgba(0,0,0,.5) 0 4px 4px;
 
 		color: #fff;
-	
+
 	background: -moz-linear-gradient(top, rgba(111,9,9,1) 0%, rgba(180,9,9,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(111,9,9,1)), color-stop(100%,rgba(180,9,9,1)));
 	background: -webkit-linear-gradient(top, rgba(111,9,9,1) 0%,rgba(180,9,9,1) 100%);
 	background: -o-linear-gradient(top, rgba(111,9,9,1) 0%,rgba(180,9,9,1) 100%);
 	background: linear-gradient(top, rgba(111,9,9,1) 0%,rgba(180,9,9,1) 100%);
-	
+
 	-moz-background-clip: padding-box;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
