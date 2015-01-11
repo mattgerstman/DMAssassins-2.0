@@ -26,7 +26,7 @@ src: url('fonts/AvenirLTStd-Roman.ttf');
 
 
 body {
-	background: url('/assets/img/orange.jpeg') repeat-x #014083;
+	background: url('assets/img/orange.jpeg') repeat-x #014083;
 	font-family: AGReg;
 }
 
@@ -107,7 +107,7 @@ h3 {
 	height:35px;
 
 	padding-top:5px;
-	background: url('/assets/img/blue.png');
+	background: url('assets/img/blue.png');
 }
 
 a {
