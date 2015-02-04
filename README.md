@@ -7,6 +7,6 @@ This version of DMAssassins was written as an update to [DMAssassins-1.0](https:
 
 While this version is still prone to security flaws and has some quirks, it is a dramatic improvement over its [predecessor](https://github.com/mattgerstman/DMAssassins-1.0). This version introduced "plot twists" which were clever ways to rearrange targets and create new constraints to keep the game interesting. One of the most fun of these was the "big red button" which any player could hit (once) to get a new target. We did not inform them what the button did and people enjoyed the surprsie. Unfortunately, many of these plot twists were hard coded on various pages and would now be difficult to execute.
 
-This version was used in both 2012 and 2013 by [Dance Marathon at the University of Florida](http://floridadm.org) and raised several thousand dollars while it was in comission. It was later replaced by [DMAssassins](https://dmassassins.com).
+This version was used in both 2012 and 2013 by [Dance Marathon at the University of Florida](http://floridadm.org) and raised several thousand dollars while it was in comission. It was later replaced by [DMAssassins](https://github.com/mattgerstman/DMAssassins).
 
 You can see a demo of it [here](http://apps.mattgerstman.com/Assassins2). Username: 10000000 Password: 917
